@@ -1,0 +1,336 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f5f7fa;
+    color: #1a1f36;
+    overflow-x: hidden;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%; /* Ensure it takes full width */
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    position: fixed;
+    background: linear-gradient(180deg, #1e293b, #0f172a);
+    color: white;
+    padding: 24px 0;
+    min-height: 100vh;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.profile-section {
+    text-align: center;
+    margin: 10px 20px 30px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-icon {
+    font-size: 60px;
+    color: white;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+}
+
+#sidebarStudentName {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* Sidebar Navigation */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.sidebar-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 4px 12px;
+    color: #cbd5e1;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-item:hover {
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.sidebar-item i {
+    width: 24px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-right: 12px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-item:hover i {
+    transform: scale(1.1);
+}
+
+.sidebar-item.active {
+    background: rgba(255,255,255,0.2);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.logout-item {
+    margin: 20px 12px;
+    padding: 16px 24px;
+    color: #ff4d4d;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 77, 77, 0.3);
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.logout-item:hover {
+    background: rgba(255, 77, 77, 0.15);
+    border-color: #ff4d4d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.2);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+}
+/* Main Content - Adjust for Sidebar */
+.main-content {
+    margin-left: 250px; /* Same width as the sidebar */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto; /* Enable scrolling for content */
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 300px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.search-container:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon {
+    color: #a4b0be;
+    margin-right: 10px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Add spacing between elements */
+}
+
+
+/* Notification icon */
+.notifications {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-popup {
+    width: 300px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.notification-item {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1a202c;
+    font-size: 14px;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: #f8fafc;
+}
+
+
+.notifications i {
+    font-size: 20px;
+}
+
+/* Notification badge */
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 10px;
+}
+/* Job Listings */
+.job-list-container {
+    flex: 1;
+    width: 100%;
+    max-width: 800px; /* Adjust max width for better readability */
+    margin: 0 auto; /* Center the job list */
+}
+
+/* Change display to flex with column direction to stack jobs vertically */
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds spacing between each job item */
+}
+
+/* Ensure job items take full width */
+.job-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    padding: 32px;
+    transition: all 0.2s ease;
+    width: 100%; /* Ensures job items stretch fully */
+}
+
+.job-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.job-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.job-item-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.job-item-date {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.job-item-description {
+    color: #34495e;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Apply Button */
+.apply-btn {
+    display: inline-block;
+    width: 60%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.apply-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.2);
+}
+
+.apply-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+.apply-btn:disabled {
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+   
+
+.apply-btn:disabled {
+    background-color: #e2e8f0;
+    cursor: not-allowed;
+}

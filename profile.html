@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+         
+        <nav class="sidebar">
+            <div class="back-to-feed" onclick="goToFeed()">
+                <i class="fas fa-arrow-circle-left"></i> Back to Feed
+            </div>
+            
+            
+            <ul>
+                <li class="active" onclick="showSection('basic-details')">Basic Details</li>
+                <li onclick="showSection('placement-interest')">Placement Interest</li>
+                <li onclick="showSection('academic-details')">Academic Details</li>
+                <li onclick="showSection('college-performance')">College Academic Performance</li>
+                <li onclick="showSection('contact-info')">Contact Info</li>
+                <li onclick="showSection('tg-details')">TG Details</li>
+                <li><button id="logoutBtn">Logout</button></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="top-bar">
+                <h2 id="student-name">Loading...</h2>
+                <span id="reg-number">Loading...</span>
+            </div>
+            <!-- <button id="logout-button">Logout</button> -->
+
+            <!-- Sections -->
+            <div class="form-section" id="basic-details">
+                <h3>Basic Details</h3>
+                <form id="basic-form">
+                    <label>Branch: <input type="text" id="branch"></label>
+                    <label>Date of Birth: <input type="date" id="dob"></label>
+                    <label>Category:
+                        <select id="category">
+                            <option value="Gen">Gen</option>
+                            <option value="SC">SC</option>
+                            <option value="ST">ST</option>
+                            <option value="OBC">OBC</option>
+                        </select>
+                    </label>
+                    <label>Gender:
+                        <select id="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </label>
+                    <label>PAN Number: <input type="text" id="pan_number"></label>
+                    <label>Aadhaar Number: <input type="text" id="adhaar_number"></label>
+                    <label>Father's Name: <input type="text" id="fathers_name"></label>
+                    <button type="submit">Save and Continue</button>
+                </form>
+            </div>
+
+            <div class="form-section" id="academic-details" style="display: none;">
+                <h3>Academic Details</h3>
+                <form id="academic-form">
+                    <label>Class 10 Percentage: <input type="number" step="0.01" id="class_10_percentage"></label>
+                    <label>Class 10 Year: <input type="number" id="class_10_year"></label>
+                    <label>Class 10 School: <input type="text" id="class_10_school"></label>
+                    <label>Class 10 Board: <input type="text" id="class_10_board"></label>
+                    <label>Class 12 Percentage: <input type="number" step="0.01" id="class_12_percentage"></label>
+                    <label>Class 12 Year: <input type="number" id="class_12_year"></label>
+                    <label>Class 12 School: <input type="text" id="class_12_school"></label>
+                    <label>Class 12 Board: <input type="text" id="class_12_board"></label>
+                    <label>Polytechnic Percentage: <input type="number" step="0.01" id="polytechnic_percentage"></label>
+                    <label>Polytechnic Year: <input type="number" id="polytechnic_year"></label>
+                    <label>Polytechnic Institute: <input type="text" id="polytechnic_institute"></label>
+                    <button type="submit">Save and Continue</button>
+                </form>
+            </div>
+
+            <div class="form-section" id="college-performance" style="display: none;">
+                <h3>College Academic Performance</h3>
+                <form id="college-performance-form">
+                    <label>GPA 1st Sem: <input type="number" step="0.01" id="gpa_1st_sem"></label>
+                    <label>GPA 2nd Sem: <input type="number" step="0.01" id="gpa_2nd_sem"></label>
+                    <label>GPA 3rd Sem: <input type="number" step="0.01" id="gpa_3rd_sem"></label>
+                    <label>GPA 4th Sem: <input type="number" step="0.01" id="gpa_4th_sem"></label>
+                    <label>GPA 5th Sem: <input type="number" step="0.01" id="gpa_5th_sem"></label>
+                    <label>GPA 6th Sem: <input type="number" step="0.01" id="gpa_6th_sem"></label>
+                    <label>Final CGPA: <input type="number" step="0.01" id="final_cgpa"></label>
+                    <label>Current CGPA: <input type="number" step="0.01" id="current_cgpa"></label>
+                    <label>Active Backlogs: <input type="number" id="active_backlogs"></label>
+                    <label>Academic Gap (Years): <input type="number" id="academic_gap"></label>
+                    <button type="submit">Save and Continue</button>
+                </form>
+            </div>
+
+            <div class="form-section" id="contact-info" style="display: none;">
+                <h3>Contact Information</h3>
+                <form id="contact-form">
+                    <label>Mobile No: <input type="text" id="mobile_no"></label>
+                    <label>WhatsApp No: <input type="text" id="whatsapp_no"></label>
+                    <label>Home Contact No: <input type="text" id="home_contact_no"></label>
+                    <label>Email (SMIT): <input type="email" id="email_smit"></label>
+                    <label>Personal Email: <input type="email" id="personal_email"></label>
+                    <label>Permanent Address: <input type="text" id="permanent_address"></label>
+                    <label>Home Town: <input type="text" id="home_town"></label>
+                    <label>Home State: <input type="text" id="home_state"></label>
+                    <label>Home State Pin: <input type="text" id="home_state_pin"></label>
+                    <label>Country: <input type="text" id="country"></label>
+                    <button type="submit">Save and Continue</button>
+                </form>
+            </div>
+
+
+            <div class="form-section" id="tg-details" style="display: none;">
+                <h3>TG Details</h3>
+                <form id="tg-form">
+                    <label>TG Name: <input type="text" id="tg_name"></label>
+                    <label>TG Contact: <input type="text" id="tg_contact"></label>
+                    <label>TG Email: <input type="email" id="tg_email"></label>
+                    <button type="submit">Save and Continue</button>
+                </form>
+            </div>
+
+            <div class="form-section" id="placement-interest" style="display: none;">
+                <h3>Placement Interest</h3>
+                <form id="placement-interest-form">
+                    <label>Interested in Placement:
+                        <select id="interested_in_placement">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </label>
+                    <fieldset>
+                        <legend>Declaration by the Student</legend>
+                        <p>1) I hereby declare that I am interested for placement support through T&P and accordingly give my consent to participate in Pre-Employability Training (PET) organized by T&P Cell of SMIT. I am also aware that the Institute is NOT charging any fees towards this Employability Training.</p>
+                        <p>2) I shall attend all the sessions and maintain minimum 75% attendance in the training sessions.</p>
+                        <p>3) I shall attend all the Mock assessments as and when organized by the T&P Cell.</p>
+                        <p>4) I understand that Pre-Employability Training is Important and mandatory for overcoming hurdles during the campus hiring processes. In case I am not attending Pre-Employability Training OR not maintaining 75% attendance in the PET OR not attempting the Mock Tests, my candidature may be cancelled and I will not be able to participate in any campus hiring process through T&P Cell.</p>
+                        <p>5) I also understand that attending Pre-Placement training does not guarantee any job and this training is being imparted to enhance my employability in organizations.</p>
+                        <p>6) I shall maintain sanctity of examination during placement drives (written / oral / computer-based examination or any other form of assessment). In case I am found to indulge in any act of malpractice or misbehaviour, suitable disciplinary action (including debarring from all placement drives or rustication etc) may be initiated against me.</p>
+                        <label>
+                            <input type="radio" name="placement_declaration" value="true"> I AGREE
+                        </label>
+                        <label>
+                            <input type="radio" name="placement_declaration" value="false"> I DISAGREE
+                        </label>
+                    </fieldset>
+                    <label>Reason if Not Interested:
+                        <textarea id="reason_not_interested"></textarea>
+                    </label>
+                    <button type="submit">Save and Continue</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="profile.js"></script>
+</body>
+</html>

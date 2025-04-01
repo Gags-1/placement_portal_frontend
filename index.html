@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SMIT Placement Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="reg_number">Registration Number:</label>
+            <input type="text" id="reg_number" name="reg_number" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p style="color: black;">Don't have an account? <a href="register.html">Register here</a></p>
+        <p style="color: black;"><a href="admin_login.html">Admin Login</a></p>
+        <p id="error-message" style="color: red; display: none;">Invalid registration number or password</p>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
+    
