@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("password", document.getElementById("password").value);
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/login", {
+            const response = await fetch("https://placement-portal-npcs.onrender.com/admin/login", {
                 method: "POST",
                 body: formData, // Form data instead of JSON
             });

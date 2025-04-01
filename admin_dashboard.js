@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchStats() {
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/stats", {
+            const response = await fetch("https://placement-portal-npcs.onrender.com/admin/stats", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchJobs() {
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/jobs", {
+            const response = await fetch("https://placement-portal-npcs.onrender.com/admin/jobs", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!confirm("Are you sure you want to delete this job?")) return;
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/admin/jobs/${jobId}`, {
+            const response = await fetch(`https://placement-portal-npcs.onrender.com/admin/jobs/${jobId}`, {
                 method: "DELETE",
                 headers: { "Authorization": `Bearer ${token}` }
             });
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             try {
-                const response = await fetch("http://127.0.0.1:8000/admin/create-job", {
+                const response = await fetch("https://placement-portal-npcs.onrender.com/admin/create-job", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
         studentDataElement.innerHTML = "<p>Fetching data...</p>";
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/students", {
+            const response = await fetch("https://placement-portal-npcs.onrender.com/students", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("downloadCsvBtn").addEventListener("click", async function () {
         try {
-            const response = await fetch("http://127.0.0.1:8000/students", {
+            const response = await fetch("https://placement-portal-npcs.onrender.com/students", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 

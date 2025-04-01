@@ -9,7 +9,7 @@ document.getElementById("login-form").addEventListener("submit", async function(
     loginData.append("password", password);
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/login", {  
+        const response = await fetch("https://placement-portal-npcs.onrender.com/login", {  
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"

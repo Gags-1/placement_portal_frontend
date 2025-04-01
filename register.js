@@ -6,7 +6,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const email_smit = document.getElementById("email_smit").value;
     const password = document.getElementById("password").value;
 
-    const response = await fetch("http://127.0.0.1:8000/students/", {
+    const response = await fetch("https://placement-portal-npcs.onrender.com/students/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -47,7 +47,7 @@ function fetchStudentDetails() {
         return;
     }
 
-    fetch(`http://127.0.0.1:8000/students/${regNumber}`, {
+    fetch(`https://placement-portal-npcs.onrender.com/students/${regNumber}`, {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`
@@ -81,7 +81,7 @@ function fetchJobListings() {
         return;
     }
 
-    fetch("http://127.0.0.1:8000/admin/jobs", {
+    fetch("https://placement-portal-npcs.onrender.com/admin/jobs", {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`

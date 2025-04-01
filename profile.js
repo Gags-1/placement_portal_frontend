@@ -10,7 +10,7 @@ if (!token || !regNumber) {
 // Fetch Student Details
 async function fetchStudent() {
     try {
-        const response = await fetch(`http://127.0.0.1:8000/students/${regNumber}`, {
+        const response = await fetch(`https://placement-portal-npcs.onrender.com/students/${regNumber}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -116,7 +116,7 @@ document.getElementById("basic-form").addEventListener("submit", async function 
     };
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/students/${regNumber}`, {
+        const response = await fetch(`https://placement-portal-npcs.onrender.com/students/${regNumber}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -155,7 +155,7 @@ document.getElementById("academic-form").addEventListener("submit", async functi
     };
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/students/${regNumber}`, {
+        const response = await fetch(`https://placement-portal-npcs.onrender.com/students/${regNumber}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -196,7 +196,7 @@ document.getElementById("college-performance-form").addEventListener("submit", a
     };
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/students/${regNumber}`, {
+        const response = await fetch(`https://placement-portal-npcs.onrender.com/students/${regNumber}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -234,7 +234,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     };
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/students/${regNumber}`, {
+        const response = await fetch(`https://placement-portal-npcs.onrender.com/students/${regNumber}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -265,7 +265,7 @@ document.getElementById("tg-form").addEventListener("submit", async function (ev
     };
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/students/${regNumber}`, {
+        const response = await fetch(`https://placement-portal-npcs.onrender.com/students/${regNumber}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -295,7 +295,7 @@ document.getElementById("placement-interest-form").addEventListener("submit", as
     };
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/students/${regNumber}`, {
+        const response = await fetch(`https://placement-portal-npcs.onrender.com/students/${regNumber}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
